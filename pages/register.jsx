@@ -17,7 +17,7 @@ export default function Register(){
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try{
-            await axios.post('http://localhost:5000/api/users', form);
+            await axios.post('https://book-backend-xco5.onrender.com/api/users', form);
             setSuccess(true);
             setTimeout(()=>{
                 router.push('/login')

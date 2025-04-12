@@ -18,7 +18,7 @@ export default function SeekerDashboard() {
   }, []); 
 
   const fetchBooks = async () => {
-    const res = await axios.get('http://localhost:5000/api/books'); 
+    const res = await axios.get('https://book-backend-xco5.onrender.com/api/books'); 
     setBooks(res.data); 
   };
 

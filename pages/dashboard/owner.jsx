@@ -32,14 +32,14 @@ export default function Owner(){
     }, []);
 
     const fetchBooks = async()=>{
-        const res = await axios.get('http://localhost:5000/api/books');
+        const res = await axios.get('https://book-backend-xco5.onrender.com/api/books');
         setBooks(res.data.filter((book) => book.ownerId === user._id));
     }
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            await axios.post('http://localhost:5000/api/books', {
+            await axios.post('https://book-backend-xco5.onrender.com/api/books', {
                 ...form,
                 ownerId:user._id,
             });
@@ -52,7 +52,7 @@ export default function Owner(){
 
     const toggleStatus = async (id, newStatus)=>{
         try{
-            await axios.patch(`http://localhost:5000/api/books/${id}`, {status:newStatus});
+            await axios.patch(`https://book-backend-xco5.onrender.com/api/books/${id}`, {status:newStatus});
             fetchBooks();
         }catch(err){
             setError('Failed to update status')
